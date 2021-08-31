@@ -182,6 +182,15 @@ h3{
 	margin-bottom: 20%;
 }
 
+.algaeVideoContainer-teaser{
+	height: 500px;
+	width: 100%;
+	display: block;
+	position: relative;
+	margin-top: 20%;
+	margin-bottom: 20%;
+}
+
 .algaeVideos{
 	width: 100%;
 }
