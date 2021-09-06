@@ -16,14 +16,39 @@
    </div>
    <div class="main-content">
     <div class="stream-elements">
-      <div class="audio-stream">
+      <!-- <div class="audio-stream">
+
+      </div> -->
+      <div class="video-stream">
+
+        <!-- OPTIONAL YOUTUBE PLAYER -->
+        <!-- <iframe src="https://www.youtube.com/embed/v8nyYnsJuZs?controls=0&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+
+        <!-- LOCALHOST TWITCH -->
+        <!-- <iframe src="https://player.twitch.tv/?video=1139673399&parent=localhost" parent="localhost" frameborder="0" allowfullscreen="true" scrolling="no" ></iframe> -->
+
+        <iframe src="https://player.twitch.tv/?video=1139673399&parent=xlab-utokyo.github.io/" parent="xlab-utokyo.github.io/" frameborder="0" allowfullscreen="true" scrolling="no" ></iframe>
+
+        <!-- TOKYO LIVE TWITCH PLAYER -->
+      
+
+        <!-- NEW YORK LIVE TWITCH PLAYER -->
 
       </div>
-      <div class="video-steam">
 
+
+
+      <div class="experience-note">
+        <p class="big-p">Note: For an optimal experience, headphones are recommended.</p>
       </div>
 
-      <div class="poem">
+
+
+
+      
+
+
+     <!--  <div class="poem">
         <p>
           so I count my hopes: the bumblebees<br/>
           <strong><u>are making a comeback, one snug tight</u></strong><br/>
@@ -40,11 +65,16 @@
           so you trapped it in a jar & gave it to a girl<br/>
           you liked. I asked if it died. you say you like<br/>
         </p>
-      </div>
+      </div> -->
 
       <div class="how-it-works">
         <h2>HOW IT WORKS</h2>
-        <p class="big-p">Algahon is hybrid installation wherein algae bubbles that ring at minnaert frequency near algal filaments are rendered audible through a hydrophone.</p>
+        <p class="big-p"> Oyxgen bubbles that leave algae filaments ring at ring at minnaert frequency. We render these bubbles audible thrugh a hydrophone, for the audience to listen to photosynthesis/carbon conversion in real-time. 
+        </p>
+
+        <p>
+          Your audio recording is converted and played as photosynthetic radiation (PAR) in our saltwater aquariums. Our macroalgae aquariums (with Sea Lettuce and Red Ogo species) are in Tokyo (running 9am-1pm Linz Time) and New York (running from 1pm-5pm Linz time). 
+        </p>
 
         <lottie-player src="https://xlab-utokyo.github.io/algaphon/assets/anims/algaphonworking.json" background="transparent"  speed="1" class="how-it-works-player" loop autoplay></lottie-player>
 
@@ -53,14 +83,15 @@
 
       <div class="talk-to-me">
         <div class="talker-section">
-          <h2>TALK TO ME</h2>
+          <h2>RECORD YOUR AUDIO MESSAGE</h2>
 
-          <p>You can record your three second message here for the algae. Any language works!</p>
-          <p>You'll receive the response from the algae in a remote aquarium within 24-48hours via email.</p>
+          <p>You can record your three second message that will be converted to PAR and played as light in the remote aquariums. We record the algae bubble sounds as a result of these light variations and the recording is then sent to your email in 24-48 hours.</p>
+          
+
 
           <div id="recording-section">
             <h3>RECORD A MESSAGE</h3>
-            
+            <p>We currently limit the visitor message recording to three seconds to allow more people to experience the installation.  </p>
               <div class="recorder">  
                 <div class="recordingscrub-container">
                   <div id="recordingScrubBackgound" class="recordingscrub"></div>
@@ -71,7 +102,9 @@
                 <button id="stopRecordingButton" class="customButton"></button>
                 <button id="playRecordingButton" class="customButton"></button>
                 <button id="pausePlaybackButton" class="customButton"></button>
-                <label id="recordingTimeLabel" class="recordingLabel">00:000</label>
+                <div id="recordingTimeLabelContainer">
+                  <label id="recordingTimeLabel" class="recordingLabel">00:000</label>
+                </div>
                 <div class="recording-do-over-container">
                   <label id="recordingDoOverLabel">Not happy with the recording? <a id="rerecord-a" >Do it again</a></label>
                 </div>
@@ -119,9 +152,11 @@
 
             <div id="thank-you-container">
               <h3>THANK YOU!</h3>
-              <p>You'll receive a response in 48 hours.</p>
+              <p>You'll receive a response in 48 hours. You may also tune in to live stream anytime from 9am-5pm (Linz time)! </p>
 
-              <button id="continueExploringButton" class="customButton"></button>
+              <form action="archive.html">
+                <button id="continueExploringButton" type="submit" class="customButton"></button>
+              </form>
             </div>
           </div>
 
