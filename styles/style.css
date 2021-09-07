@@ -828,3 +828,14 @@ input[type=text]:focus {
 
 
 /* Archive page - archive.html */
+
+
+/* Policy*/
+.policy h3{
+	margin: 5% 0 10% 0;
+}
+
+.policy p{
+	line-height: 1.2rem;
+	margin-bottom: 5%;
+}
