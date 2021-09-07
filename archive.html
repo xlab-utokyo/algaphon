@@ -13,22 +13,57 @@
   			<a class="active" href="archive.html">ARCHIVE</a>
   			<a href="about.html">ABOUT</a>
 	</div>
+
   	<div class="main-content">
-  		<div class="exhibit-elements">
+  		<div class="archive-elements">
+        <h2>PAST RECORDINGS</h2>
+        <p>This list will be populated by the end of the day. All names are anonymized to the public.</p>
+
+        <div class="single-visitor-container">
           
 
+          <div class="uncompressed-container">
+            <div class="playercontrols">
+              <div class="inacArchivePlayer"></div>
+              <!-- <div class="acArchivePlayer"></div> -->
+              <button class="customButton archivePlayBtn" onclick="playerBtnClick(this)" filename="../assets/algaesounds/test.wav"></button>
+            </div>
+
+            <div class="visitorID">
+              <p>ID4112 from Linz, Austria<br/>
+              <em>Compressed in human time</em></p>  
+            </div>            
+          </div>
+
+        
+          <div class="compressed-container">
+            <div>
+              <div class="inacArchivePlayer"></div>
+              <button class="customButton archivePlayBtn" onclick="playerBtnClick(this)" filename="../assets/algaesounds/test.wav"></button>
+            </div>
+
+            <div class="visitorID">
+              <p>ID4112 from Linz, Austria<br/>
+              <em>Bubble sounds in algae time</em></p>  
+            </div>            
+  		    </div>
+          <div style="clear: both;"></div> 
+
+
+  	   </div>	
+
+
+      
 
 
 
-  		</div>
-  	</div>	
   	<!-- <div class="footer">
   		<button id="exploreSpeciesButton" class="customButton"></button>
   		<div class="scrollIndicator"></div>
   	</div> -->
   </div>
   
-
+  <script src="scripts/algaphonarchive.js" charset="utf-8"></script>
   
   <script type="text/javascript">
   	
