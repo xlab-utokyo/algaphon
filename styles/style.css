@@ -153,6 +153,14 @@ h3{
 	margin-right: 8%;
 }
 
+.separator{
+	height: 10%;
+	width: 100%;
+	border-top: 2px solid white;
+	display: block;
+
+}
+
 #exploreSpeciesButton:hover{
 	background-image: url( '../assets/images/explore-species-hover@2x.png' ),
 					  url( '../assets/images/explore-species@2x.png' );					  
