@@ -455,7 +455,6 @@ visitorPrivacyChk.onchange = function() {
 	checkRecorderSendingUIStatus();
 }
 
-
 //return 0 if some field was left empty
 //returns 1 is all fields are good
 function isVisitorFieldPopulated() {
@@ -465,10 +464,12 @@ function isVisitorFieldPopulated() {
 		return 0;
 	}
 
+	console.log(nameTxt.value);
+
 	//Check name, email fields
-	if ((nameTxt == "" || nameTxt.length == 0 || nameTxt == null) ||
-		(cityTxt == "" || cityTxt.length == 0 || cityTxt == null) ||
-		(emailTxt == "" || emailTxt.length == 0 || emailTxt == null)) {
+	if ((nameTxt.value == "" || nameTxt.value.length == 0 || nameTxt.value == null) ||
+		(cityTxt.value == "" || cityTxt.value.length == 0 || cityTxt.value == null) ||
+		(emailTxt.value == "" || emailTxt.value.length == 0 || emailTxt.value == null)) {
 		errorGuideLbl.innerHTML = "Please check name, city and email fields"
 		return 0;
 	}
