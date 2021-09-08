@@ -169,14 +169,14 @@ h3{
 
 #liveRecordingButton{
 	background-image: url( '../assets/images/live-recording@2x.png' ),
-					  url( '../assets/images/liver-recording-hover@2x.png' );
+					  url( '../assets/images/live-recording-hover@2x.png' );
     background-size: 200px 42px;
 	width: 200px;	
 	height: 42px;
 }
 
 #liveRecordingButton:hover{
-	background-image: url( '../assets/images/liver-recording-hover@2x.png' ),
+	background-image: url( '../assets/images/live-recording-hover@2x.png' ),
 					  url( '../assets/images/live-recording@2x.png' );
 	cursor:pointer;
 }
@@ -282,7 +282,7 @@ h3{
 }
 
 .how-it-works{
-	margin: auto auto auto auto;
+	margin: 10% auto 20% auto;
 	padding-top: 0%;
 	width: 60%;
 }
