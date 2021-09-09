@@ -214,10 +214,9 @@ function recordVisitorMsg() {
 	console.log("record visitor message entered");
 	// Initialize recorder
 	navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
-	navigator.getUserMedia({
-			audio: true
-		},
-		function(e) {
+	var constraints = {audio: true, video: false};
+
+	function successCallback(stream){
 			console.log("user consent");
 
 			leftchannel = [];
@@ -235,7 +234,7 @@ function recordVisitorMsg() {
 			context = new AudioContext();
 
 			// creates an audio node from the microphone incoming stream
-			mediaStream = context.createMediaStreamSource(e);
+			mediaStream = context.createMediaStreamSource(stream);
 
 			elapsedTime = 0;
 			percentScrubberWidth = 0;
@@ -274,10 +273,81 @@ function recordVisitorMsg() {
 				stopRecording();
 				setRecorderElapser(0);
 			}, 3000);
-		},
-		function(e) {
-			console.error(e);
-		});
+	}
+
+	function errorCallback(error){
+		console.log("navigator.getUserMedia error: ", error);
+		// console.error(e);
+	}
+
+	navigator.mediaDevices.getUserMedia(constraints)
+  		.then(successCallback)
+  		.catch(errorCallback);
+
+	// navigator.getUserMedia({
+	// 		audio: true
+	// 	},
+	// 	function(e) {
+	// 		console.log("user consent");
+
+	// 		leftchannel = [];
+	// 		rightchannel = [];
+	// 		recorder = null;
+	// 		recordingLength = 0;
+	// 		volume = null;
+	// 		mediaStream = null;
+	// 		context = null;
+	// 		blob = null;
+
+
+	// 		// creates the audio context
+	// 		window.AudioContext = window.AudioContext || window.webkitAudioContext;
+	// 		context = new AudioContext();
+
+	// 		// creates an audio node from the microphone incoming stream
+	// 		mediaStream = context.createMediaStreamSource(e);
+
+	// 		elapsedTime = 0;
+	// 		percentScrubberWidth = 0;
+	// 		startTime = new Date();
+
+	// 		// https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createScriptProcessor
+	// 		// bufferSize: the onaudioprocess event is called when the buffer is full
+	// 		var bufferSize = 2048;
+	// 		var numberOfInputChannels = 2;
+	// 		var numberOfOutputChannels = 2;
+	// 		if (context.createScriptProcessor) {
+	// 			recorder = context.createScriptProcessor(bufferSize, numberOfInputChannels, numberOfOutputChannels);
+	// 		} else {
+	// 			recorder = context.createJavaScriptNode(bufferSize, numberOfInputChannels, numberOfOutputChannels);
+	// 		}
+
+	// 		recorder.onaudioprocess = function(e) {
+	// 			leftchannel.push(new Float32Array(e.inputBuffer.getChannelData(0)));
+	// 			rightchannel.push(new Float32Array(e.inputBuffer.getChannelData(1)));
+	// 			recordingLength += bufferSize;
+	// 		}
+
+	// 		recorder.addEventListener("stop", () => {
+	// 			setRecorderState("stopped"); //sening current playerstate afetr starting recording 
+	// 			checkRecorderSendingUIStatus();
+
+	// 			// audio.addEventListener("ended", function(){ setRecorderState("stopped") });
+	// 		});
+
+	// 		// we connect the recorder
+	// 		mediaStream.connect(recorder);
+	// 		recorder.connect(context.destination);
+	// 		setRecorderElapser(1); //sending 1 for starting
+
+	// 		setTimeout(() => {
+	// 			stopRecording();
+	// 			setRecorderElapser(0);
+	// 		}, 3000);
+	// 	},
+	// 	function(e) {
+	// 		console.error(e);
+	// 	});
 
 
 
@@ -344,7 +414,7 @@ function stopRecording() {
 		setRecorderState("stopped");
 	});
 
-	audio.play();
+	// audio.play();
 
 }
 
@@ -426,7 +496,8 @@ function setRecorderState(playerState) {
 
 
 stopRecordingBtn.onclick = function() {
-	mediaRecorder.stop();
+	// mediaRecorder.stop();
+	stopRecording();
 	setRecorderElapser(0);
 }
 
